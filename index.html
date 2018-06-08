@@ -38,7 +38,14 @@
   <button type="button" name="button">Valider</button>
 </form>
 
+<form class="age" name="form6">
+  <label for="age">Quel est ton age ?</label>
+  <input type="number" name="age" value="">
+  <label for="ageVise" >Quel age vise tu ?</label>
+  <input type="number" name="ageVise" value="">
+  <button type="button" name="button">Valider</button>
 
+</form>
 
 
 
@@ -99,6 +106,22 @@ var age = document.form5.age.value;
 valider5.addEventListener("click", event=> {
   var jours = age*365;
   alert("Vous avez vécu " + jours + " jours.");
+})
+
+// EXERCICE 6
+
+var valider6 = document.getElementsByName("button")[5];
+var age = document.form6.age.value;
+var vise = document.form6.ageVise.value;
+valider6.addEventListener("click", event => {
+  var jours = age*365;
+  var joursVise = vise*365;
+  var reste = joursVise-jours;
+  if (jours<=joursVise) {
+    alert("Vous avez vécu "+jours+" jours. Il y a encore "+reste+" jours avant vos "+vise+" ans.");
+  } else {
+    alert("Tu t' est planté dans les ages");
+  }
 })
 
 
