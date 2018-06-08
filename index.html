@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>JavaScript Serie</title>
+  </head>
+  <body>
+
+<form class="operation" name="form1">
+  <label for="nbre1" >Nombre1</label>
+  <input type="text" name="nbre1" value="">
+  <label for="nbre2">Nombre2</label>
+  <input type="text" name="nbre2" value="">
+  <button type="button" name="button">Valider</button>
+</form>
+
+<form class="couleur" name="form2">
+  <label for="choixCouleur">Choisir une couleur</label>
+  <input type="color" name="couleur" value="">
+  <button type="button" name="button">Valider</button>
+</form>
+
+<form class="image" name="form3">
+  <label for="choixImageUrl">Donnez le chemin de l image</label>
+  <input type="text" name="choixImageUrl" value="">
+  <button type="button" name="button">Valider</button>
+</form>
+
+<form class="modulo" name="form4">
+  <label for="modulo">Choisir un nombre</label>
+  <input type="number" name="nbre" value="">
+  <button type="button" name="button">Valider</button>
+</form>
+
+<form class="age" name="form5">
+  <label for="age">quel est ton age ?</label>
+  <input type="number" name="age" value="">
+  <button type="button" name="button">Valider</button>
+</form>
+
+
+
+
+
+<section>
+</section>
+
+<script type="text/javascript">
+
+// EXERCICE 1
+
+var valider = document.getElementsByName("button")[0];
+valider.addEventListener("click",event => {
+  var nombre1 = document.form1.nbre1.value;
+  var nombre2 = document.form1.nbre2.value;
+  var resultat = nombre1*nombre2;
+  alert("En multiplant "+nombre1+" par "+nombre2+", on obtient "+ resultat);
+  // console.log(resultat);
+  // var baliseP = document.createElement("P");
+  // baliseP.setAttribute("id", "newP");
+  // document.getElementById("newP").innerHTML = "text";
+})
+
+// ### EXERCICE 2
+
+var valider2 = document.getElementsByName("button")[1];
+var couleurChoisi = document.form2.couleur.value;
+valider2.addEventListener("click", event=> {
+  document.body.style.backgroundColor = couleurChoisi;
+})
+
+// EXERCICE 3
+
+var valider3 = document.getElementsByName("button")[2];
+var photoChoisi = document.form3.choixImageUrl.value;
+valider3.addEventListener("click", event=> {
+
+         var img = document.createElement("img");
+         img.src = photoChoisi;
+         document.getElementsByTagName("section")[0].appendChild(img);
+         console.log(photoChoisi);
+})
+
+// EXERCICE 4
+
+var valider4 = document.getElementsByName("button")[3];
+var numero = document.form4.nbre.value;
+valider4.addEventListener("click", event => {
+   var modulo = numero % 5;
+   // document.write(modulo);
+   // console.log(modulo);
+   alert("le modulo de " + numero + " divisé par 5 " + " est " + modulo);
+})
+
+// EXERCICE 5
+
+var valider5 = document.getElementsByName("button")[4];
+var age = document.form5.age.value;
+valider5.addEventListener("click", event=> {
+  var jours = age*365;
+  alert("Vous avez vécu " + jours + " jours.");
+})
+
+
+
+
+
+</script>
+
+  </body>
+</html>
