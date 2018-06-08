@@ -44,9 +44,15 @@
   <label for="ageVise" >Quel age vise tu ?</label>
   <input type="number" name="ageVise" value="">
   <button type="button" name="button">Valider</button>
-
 </form>
 
+<button onclick="testConfirm()">Pour tester confirm()</button>
+
+<form name="form8">
+  <label for="nombre">Choisi un nombre entre 1 et 5</label>
+  <input type="text" name="nombre" value="">
+  <button type="button" name="button">Valider</button>
+</form>
 
 
 <section>
@@ -124,8 +130,39 @@ valider6.addEventListener("click", event => {
   }
 })
 
+// EXERCICE 7
 
+function testConfirm() {
+  var img = document.createElement("img");
+    // var imgOui = img.src: "oui.jpg";
+    // var imgNon = img.src: "non.jpg";
+  modal = confirm("Tu veux ou tu veux pas ?")
+  if (modal) {
+  img.src = 'oui.jpg';
+  document.getElementsByTagName("section")[0].appendChild(img);
+  } else {
+    img.src = 'non.jpg';
+    document.getElementsByTagName("section")[0].appendChild(img);
+  }
+}
 
+// EXERCICE 8
+
+// var section = document.getElementsByTagName("section")[0];
+// var valider8 = document.getElementsByName("button")[6];
+// var queCinq = ["zero","un","deux","trois","quatre","cinq"];
+// valider8.addEventListener("click", event => {
+//   var num = document.form8.nombre.value;
+//   for (var i = 0; i < queCinq.length; i++) {
+//     var newSpan = document.createElement("SPAN");
+//     section.appendChild(newSpan)[i];
+//     newSpan.innerHTML = num;
+//   }
+//
+//   if ((num>5) || (num<0)) {
+//     console.log(newSpan);
+//   }
+// })
 
 
 </script>
